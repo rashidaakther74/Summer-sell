@@ -8,6 +8,9 @@ const discountContainer = document.getElementById("discount");
 applyBtn.disabled = true;
 purchaseBtn.disabled = true;
 let totalPrice = 0;
+if(totalPrice <= 0){
+  applyBtn.classList.add("bg-gray-400")
+}
 const handClick = (data) => {
   const name = data.childNodes[5].innerText;
   const priceWithTk = data.childNodes[7].innerText;
@@ -24,6 +27,7 @@ const handClick = (data) => {
   }
   if(totalPrice >= 200){
     applyBtn.disabled = false;
+    applyBtn.classList.add("bg-red-400")
   }
 };
 
